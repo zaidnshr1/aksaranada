@@ -11,7 +11,7 @@ import { getAllArticles } from "@/lib/mdx";
 export const metadata: Metadata = {
   title: "AksaraNada — Di Mana Nada Bertemu Jiwa",
   description:
-    "Kursus musik profesional di Jakarta, Bekasi, dan Bandung. Vokal, gitar, piano, bass, keyboard, dan produksi musik untuk semua usia.",
+    "Kursus musik profesional di Jakarta & Kota Bekasi. Vokal, gitar, piano, bass, keyboard, dan produksi musik untuk semua usia.",
 };
 
 export default function HomePage() {

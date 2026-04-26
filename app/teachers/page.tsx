@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 export const metadata: Metadata = {
   title: "Pengajar Kami",
   description:
-    "Kenal lebih dekat dengan instruktur bersertifikat AksaraNada — musisi profesional dengan dedikasi untuk berbagi ilmu.",
+    "Kenal lebih dekat dengan instruktur AksaraNada — musisi profesional dengan dedikasi untuk berbagi ilmu.",
 };
 
 const TEACHERS = [
@@ -164,8 +164,8 @@ export default function TeachersPage() {
             </span>
           </h1>
           <p className="text-ivory/50 text-sm md:text-base leading-relaxed max-w-lg mt-5">
-            Instruktur kami bukan hanya pengajar — mereka adalah musisi aktif
-            yang membawa pengalaman nyata ke dalam setiap sesi kelas.
+            Instruktur kami bukan hanya pengajar. Mereka adalah musisi aktif
+            yang membawa pengalaman ke dalam setiap sesi kelas.
           </p>
         </div>
       </section>

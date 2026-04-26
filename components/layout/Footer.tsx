@@ -38,9 +38,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-warm-gray text-sm leading-relaxed mb-6 max-w-xs">
-              Tempat di mana bakat bertemu dedikasi. Kursus musik profesional
-              untuk semua usia, online dan onsite di Jakarta, Bekasi, dan
-              Bandung.
+              Tempat di mana bakat bertemu dedikasi. Kursus musik
+              untuk semua usia, online dan onsite di Jakarta dan Kota Bekasi.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -127,7 +126,7 @@ export default function Footer() {
               <div>
                 <p className="text-white/40 text-[0.7rem] mb-1">Lokasi</p>
                 <p className="text-warm-gray leading-relaxed">
-                  Jakarta · Bekasi · Bandung
+                  Jakarta · Bekasi
                   <br />
                   <span className="text-white/30 text-xs">
                     + Kelas Online (Seluruh Indonesia)

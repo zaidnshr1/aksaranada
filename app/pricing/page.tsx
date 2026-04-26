@@ -8,7 +8,6 @@ export const metadata: Metadata = {
     "Detail lengkap paket kursus musik AksaraNada. Vokal, gitar, piano, bass, keyboard, produksi musik. Daftar sekarang melalui Google Form.",
 };
 
-// ── GANTI URL GFORM SESUAI FORM PENDAFTARAN AKTUAL ──────────
 const GFORM_URL = process.env.NEXT_PUBLIC_GFORM_URL;
 
 const PACKAGES = [
@@ -88,20 +87,14 @@ const MODES = [
   },
   {
     title: "Onsite Jakarta",
-    desc: "Studio kami di Jakarta Selatan & Jakarta Timur.",
+    desc: "Melayani kunjungan on-site untuk seluruh wilayah Jakarta Timur.",
     note: "→ Jadwal disesuaikan",
     icon: "📍",
   },
   {
-    title: "Onsite Bekasi",
-    desc: "Studio Bekasi Barat & Bekasi Selatan.",
+    title: "Onsite Kota Bekasi",
+    desc: "Studio di Kota Bekasi dan melayani kunjungan on-site untuk seluruh wilayah Kota Bekasi.",
     note: "→ Termasuk akhir pekan",
-    icon: "📍",
-  },
-  {
-    title: "Onsite Bandung",
-    desc: "Studio Bandung area Dago & Buah Batu.",
-    note: "→ Jadwal fleksibel",
     icon: "📍",
   },
 ];
@@ -137,8 +130,7 @@ export default function PricingPage() {
             </span>
           </h1>
           <p className="text-ivory/50 text-sm md:text-base leading-relaxed max-w-xl mt-5">
-            Semua paket mencakup konsultasi gratis sesi pertama, tanpa komitmen
-            jangka panjang. Mulai kapan saja.
+            Mulai kapan saja.
           </p>
         </div>
       </section>

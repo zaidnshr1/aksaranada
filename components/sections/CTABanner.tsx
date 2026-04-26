@@ -91,8 +91,7 @@ export default function CTABanner() {
           className="text-ivory/50 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-12"
         >
           Setiap legenda pernah menjadi pemula. Yang membedakan adalah mereka
-          memilih untuk memulai. Jadwalkan kelas pertama Anda hari ini — tanpa
-          biaya, tanpa komitmen jangka panjang.
+          memilih untuk memulai. Jadwalkan kelas pertama Anda bersama kami.
         </motion.p>
 
         {/* CTAs */}
@@ -133,7 +132,6 @@ export default function CTABanner() {
           {[
             "Online & Onsite",
             "Semua Usia",
-            "Sertifikat Resmi",
             "Jadwal Fleksibel",
           ].map((m, i) => (
             <span

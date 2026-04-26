@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://aksaranada.vercel.app",
   ),
   title: {
-    default: "AksaraNada — Kursus Musik Jakarta, Bekasi & Bandung",
+    default: "AksaraNada — Kursus Musik Jakarta & Kota Bekasi",
     template: "%s | AksaraNada",
   },
   icons: {
@@ -18,17 +18,17 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   description:
-    "AksaraNada adalah kursus musik profesional dengan instruktur bersertifikat. " +
-    "Vokal, gitar, piano, bass, keyboard, dan produksi musik. Online & onsite di Jakarta, Bekasi, Bandung.",
+    "AksaraNada adalah kursus musik profesional dengan instruktur berpengalaman. " +
+    "Vokal, gitar, piano, bass, keyboard, dan produksi musik. Online & onsite di Jakarta & Kota Bekasi.",
   keywords: [
-    "kursus musik jakarta",
-    "kursus gitar bekasi",
-    "les piano bandung",
+    "kursus musik jakarta dan kota bekasi",
+    "kursus gitar jakarta dan kota bekasi",
+    "les piano jakarta dan kota bekasi",
     "kursus vokal online",
-    "produksi musik",
-    "kursus musik anak",
+    "produksi musik jakarta dan kota bekasi",
+    "kursus musik anak jakarta dan kota bekasi",
     "aksaranada",
-    "sekolah musik",
+    "sekolah musik jakarta dan kota bekasi",
   ],
   authors: [{ name: "AksaraNada" }],
   creator: "AksaraNada",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AksaraNada — Kursus Musik Profesional",
     description:
-      "Kursus musik profesional. Online & onsite Jakarta, Bekasi, Bandung.",
+      "Kursus musik profesional. Online & onsite Jakarta & Kota Bekasi.",
     images: ["/og-image.jpg"],
   },
   robots: {

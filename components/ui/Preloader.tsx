@@ -84,7 +84,7 @@ export default function Preloader() {
                 transition={{ delay: 0.7, duration: 0.5 }}
               >
                 <span className="eyebrow text-warm-gray text-[0.65rem]">
-                  Kursus Musik Jakarta · Bekasi · Bandung
+                  Kursus Musik Jakarta · Bekasi
                 </span>
               </motion.div>
             </motion.div>

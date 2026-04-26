@@ -23,7 +23,7 @@ const REELS: {
     url: "https://www.instagram.com/reel/DXeGRp2kdcx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     coverImage: "/images/reels/reels1.jpg",
     caption:
-      "Coba dengerin Once Mekel di lagu Cemburu. Cara dia nyebut huruf R dan pemenggalan katanya bikin lagu ini punya vibe rock yang mahal banget. Tanpa aksen yang kuat, lagu sekeren ini mungkin bakal kedengeran biasa aja.",
+      "Tanpa aksen yang kuat, lagu sekeren ini kedengeran biasa aja 🤔",
     duration: "1:15",
   },
   {

@@ -12,12 +12,12 @@ const VALUES = [
   {
     number: "01",
     title: "Teknik yang Solid",
-    body: "Fondasi yang kuat bukan penghalang kreativitas — ia adalah tanah tempat kreativitas tumbuh. Kami mengajarkan teknik bukan sebagai tujuan, melainkan sebagai kebebasan.",
+    body: "Fondasi yang kuat bukan penghalang kreativitas melainkan tanah tempat kreativitas tumbuh. Kami mengajarkan teknik bukan sebagai tujuan, melainkan sebagai kebebasan.",
   },
   {
     number: "02",
     title: "Ekspresi yang Bebas",
-    body: "Setiap murid memiliki suara unik yang menunggu untuk dibebaskan. Pengajar kami berperan sebagai pemandu, bukan pencetak — kami percaya pada individualitas.",
+    body: "Setiap murid memiliki suara unik yang menunggu untuk dibebaskan. Pengajar kami berperan sebagai pemandu, bukan pencetak, karena kami percaya pada individualitas.",
   },
   {
     number: "03",
@@ -27,7 +27,7 @@ const VALUES = [
   {
     number: "04",
     title: "Standar tanpa Kompromi",
-    body: "Setiap instruktur melalui kurasi ketat. Setiap kurikulum dirancang oleh praktisi industri. Kualitas bukan pilihan — ini janji kami kepada Anda.",
+    body: "Setiap instruktur melalui kurasi ketat. Setiap kurikulum dirancang oleh praktisi industri. Kami menjunjung tinggi kualitas kepada anda.",
   },
 ];
 
@@ -89,11 +89,11 @@ export default function AboutPage() {
                 </strong>{" "}
                 musik adalah bahasa universal yang tersimpan dalam setiap jiwa,
                 menunggu untuk dibebaskan. Bukan hak istimewa bagi yang
-                "berbakat" — melainkan hak setiap manusia yang memilih untuk
+                "berbakat". Melainkan hak setiap manusia yang memilih untuk
                 mendengarkan panggilan itu.
               </p>
               <p>
-                Kami memulai perjalanan ini karena melihat gap yang nyata:
+                Kami memulai perjalanan ini karena melihat gap yang nyata bahwa
                 banyak orang ingin belajar musik, tetapi jarang menemukan ruang
                 yang benar-benar memahami mereka. Ruang yang tidak hanya
                 mengajarkan teknik, tetapi juga menghargai proses, menghormati
@@ -102,7 +102,7 @@ export default function AboutPage() {
               <p>
                 AksaraNada hadir untuk menjadi ruang itu. Dengan instruktur
                 terpilih, kurikulum yang kontekstual, dan pendekatan yang
-                personal — kami percaya bahwa belajar musik seharusnya menjadi
+                personal. Kami percaya bahwa belajar musik seharusnya menjadi
                 salah satu pengalaman paling bermakna dalam hidup Anda.
               </p>
             </div>
@@ -182,10 +182,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "500+", label: "Murid Aktif" },
-              { number: "12+", label: "Instruktur Bersertifikat" },
-              { number: "7", label: "Program Kursus" },
-              { number: "3", label: "Kota (+ Online)" },
+              { number: "50+", label: "Murid Aktif" },
+              { number: "5", label: "Instruktur Bersertifikat" },
+              { number: "12", label: "Program Kursus" },
+              { number: "2", label: "Kota (+ Online)" },
             ].map((s) => (
               <div key={s.label}>
                 <p

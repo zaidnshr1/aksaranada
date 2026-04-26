@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
-// Stagger container
 const container = {
   hidden: {},
   show: {
@@ -86,7 +85,7 @@ export default function Hero() {
         style={{ writingMode: "vertical-rl" }}
       >
         <span className="eyebrow text-[0.58rem] text-white/20 tracking-[0.3em]">
-          EST · 2024 · JAKARTA
+          EST · 2026 · BEKASI
         </span>
       </motion.div>
 
@@ -139,10 +138,10 @@ export default function Hero() {
             variants={fadeUp}
             className="text-ivory/60 text-base md:text-lg leading-relaxed max-w-xl mb-10 md:mb-12"
           >
-            Bukan sekadar belajar bermain.{" "}
+            Melampaui batasan nada dan irama.{" "}
             <span className="text-ivory/40">
-              Ini tentang menemukan cara berbicara tanpa kata — melalui setiap
-              nada, ritme, dan harmoni yang Anda ciptakan.
+              Seni mengartikulasikan rasa melalui setiap nada, ritme, dan
+              harmoni yang diciptakan.
             </span>
           </motion.p>
 
