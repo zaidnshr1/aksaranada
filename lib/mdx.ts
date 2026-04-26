@@ -17,6 +17,9 @@ export interface ArticleFrontmatter {
   featured?: boolean;
   seoTitle?: string;
   seoDescription?: string;
+  adSlot1?: string;
+  adSlot2?: string;
+  adSlotPopup?: string;
 }
 
 export interface Article extends ArticleFrontmatter {
@@ -79,6 +82,9 @@ export function getArticleBySlug(slug: string): Article | null {
     seoDescription: data.seoDescription ?? data.excerpt ?? "",
     readingTime: stats.text,
     content,
+    adSlot1: data.adSlot1,
+    adSlot2: data.adSlot2,
+    adSlotPopup: data.adSlotPopup,
   };
 }
 

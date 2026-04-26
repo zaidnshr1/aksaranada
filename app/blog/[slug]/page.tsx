@@ -9,6 +9,8 @@ import {
   getRelatedArticles,
 } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
+import SidebarAd from "@/components/ui/SidebarAd";
+import AdInterstitial from "@/components/ui/AdInterstitial";
 
 // ─── Static params for SSG ────────────────────────────────
 export async function generateStaticParams() {
@@ -74,6 +76,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      {/* ── Iklan Popup ──────────────────────────────────── */}
+      <AdInterstitial adId={article.adSlotPopup} />
       {/* ── Article Hero ──────────────────────────────────── */}
       <section className="pt-32 pb-10 md:pt-40 md:pb-14 bg-ivory border-b border-border-soft">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
@@ -233,21 +237,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 │  2. Atau embed <img> dengan link href                │
                 └─────────────────────────────────────────────────────┘
               */}
-              <div className="border border-dashed border-maroon/25 bg-maroon/3 p-6 text-center min-h-[260px] flex flex-col items-center justify-center gap-3">
-                <span className="eyebrow text-[0.6rem] text-maroon/40">
-                  SLOT IKLAN
-                </span>
-                <p className="text-warm-gray text-xs leading-relaxed max-w-[180px]">
-                  Ruang iklan sidebar tersedia di sini. Hubungi kami untuk
-                  pemasangan.
-                </p>
-                <a
-                  href="mailto:info.aksaranada@gmail.com?subject=Pemasangan Iklan Blog AksaraNada"
-                  className="eyebrow text-[0.6rem] text-maroon border-b border-maroon/40 pb-0.5 hover:opacity-70 transition-opacity"
-                >
-                  Pasang Iklan →
-                </a>
-              </div>
+              {/* First ad slot */}
+              <SidebarAd adId={article.adSlot1} defaultSlot={1} />
 
               {/* Quick CTA */}
               <div className="bg-obsidian p-6">
@@ -292,14 +283,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               </div>
 
               {/* Second ad slot */}
-              <div className="border border-dashed border-maroon/25 bg-maroon/3 p-6 text-center min-h-[200px] flex flex-col items-center justify-center gap-3">
-                <span className="eyebrow text-[0.6rem] text-maroon/40">
-                  SLOT IKLAN #2
-                </span>
-                <p className="text-warm-gray text-xs max-w-[180px]">
-                  Banner iklan kedua tersedia di sini.
-                </p>
-              </div>
+              <SidebarAd adId={article.adSlot2} defaultSlot={2} />
             </div>
           </aside>
         </div>
