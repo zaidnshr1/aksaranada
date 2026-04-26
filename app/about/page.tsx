@@ -183,7 +183,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { number: "50+", label: "Murid Aktif" },
-              { number: "5", label: "Instruktur Bersertifikat" },
+              { number: "5", label: "Instruktur Berpengalaman" },
               { number: "12", label: "Program Kursus" },
               { number: "2", label: "Kota (+ Online)" },
             ].map((s) => (
