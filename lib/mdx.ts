@@ -9,6 +9,7 @@ export interface ArticleFrontmatter {
   excerpt: string;
   date: string;
   author: string;
+  authorBio: string;
   authorRole?: string;
   category: string;
   tags: string[];
@@ -68,6 +69,7 @@ export function getArticleBySlug(slug: string): Article | null {
       ? new Date(data.date).toISOString()
       : new Date().toISOString(),
     author: data.author ?? "Tim AksaraNada",
+    authorBio: data.authorBio ?? "Seorang Professional",
     authorRole: data.authorRole ?? "",
     category: data.category ?? "Umum",
     tags: data.tags ?? [],
