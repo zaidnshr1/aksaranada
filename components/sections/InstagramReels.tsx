@@ -20,23 +20,24 @@ const REELS: {
 }[] = [
   {
     id: "reel-1",
+    url: "https://www.instagram.com/reel/DXyuKxBxM6S/",
+    coverImage: "/images/reels/reels3.jpg",
+    caption: "Jamming intro Cukup Siti Nurbaya - dewa 19. 🎸🔥",
+    duration: "0:28",
+  },
+  {
+    id: "reel-2",
     url: "https://www.instagram.com/reel/DXnj6q9kXr6/?igsh=Z2t3czNoeGRrdnRm",
     coverImage: "/images/reels/reels2.jpg",
     caption: "5 Tipe voal pria: Bright, Nasal, Husky, dan Raspy 🎙🎶",
     duration: "0:24",
   },
   {
-    id: "reel-2",
+    id: "reel-3",
     url: "https://www.instagram.com/reel/DXeGRp2kdcx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     coverImage: "/images/reels/reels1.jpg",
     caption: "Tanpa aksen yang kuat, lagu sekeren ini kedengeran biasa aja 🤔",
     duration: "1:15",
-  },
-  {
-    id: "reel-3",
-    url: "https://www.instagram.com/reel/PLACEHOLDER_3/",
-    caption: "Penampilan vokal siswa di showcase akhir tahun 🎤",
-    duration: "1:00",
   },
   {
     id: "reel-4",
