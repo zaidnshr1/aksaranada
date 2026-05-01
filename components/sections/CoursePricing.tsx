@@ -3,86 +3,97 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users, User } from "lucide-react";
 
-const COURSES = [
+const PACKAGES = [
   {
-    id: "vokal",
-    label: "01",
-    name: "Vokal",
-    tagline: "Temukan kekuatan suara Anda",
-    desc: "Teknik pernapasan, intonasi, falsetto, vibrato, dan karakter vokal unik. Untuk pop, jazz, dan klasik.",
-    price: "Mulai Rp 350.000",
-    period: "/ bulan",
-    features: ["4× sesi/bulan", "Evaluasi berkala", "Rekaman demo"],
-    color: "#5B1B1B",
+    id: "reguler",
+    index: "01",
+    name: "Reguler",
+    type: "Private",
+    tagline: "Fondasi teknik yang kokoh",
+    desc: "Sesi one-on-one dengan instruktur. Kurikulum terstruktur untuk membangun teknik dasar hingga menengah.",
+    instruments: [
+      "Acoustic Guitar",
+      "Electric Guitar",
+      "Bass",
+      "Keyboard",
+      "Drum",
+    ],
+    isPrivate: true,
+    featured: false,
   },
   {
-    id: "gitar-elektrik",
-    label: "02",
-    name: "Gitar Elektrik",
-    tagline: "Dari chord hingga shredding",
-    desc: "Penguasaan teknik rhythm, lead, tone shaping, dan improvisasi. Kurikulum dari blues hingga metal.",
-    price: "Mulai Rp 350.000",
-    period: "/ bulan",
-    features: ["4× sesi/bulan", "Materi genre beragam", "Analisis lagu"],
-    color: "#3D1010",
-  },
-  {
-    id: "gitar-klasik",
-    label: "03",
-    name: "Gitar Klasik",
-    tagline: "Presisi, elegasi, kedalaman",
-    desc: "Teknik fingerstyle, membaca not balok, dan repertoar klasik dari era Baroque hingga kontemporer.",
-    price: "Mulai Rp 350.000",
-    period: "/ bulan",
-    features: ["4× sesi/bulan", "Not balok", "Repertoar klasik"],
-    color: "#5B1B1B",
-  },
-  {
-    id: "bass",
-    label: "04",
-    name: "Bass Elektrik",
-    tagline: "Fondasi dari setiap musik",
-    desc: "Groove, slap & pop, fingerstyle, dan teori ritme. Belajar menjadi tulang punggung band yang solid.",
-    price: "Mulai Rp 350.000",
-    period: "/ bulan",
-    features: ["4× sesi/bulan", "Teori ritme", "Ensemble session"],
-    color: "#3D1010",
-  },
-  {
-    id: "piano",
-    label: "05",
-    name: "Piano",
-    tagline: "Raja dari semua instrumen",
-    desc: "Teknik klasik, harmonisasi, chord voicing, dan aransemen. Dari Czerny hingga solo jazz kontemporer.",
-    price: "Mulai Rp 400.000",
-    period: "/ bulan",
-    features: ["4× sesi/bulan", "Teori harmoni", "Sheet music"],
+    id: "premium",
+    index: "02",
+    name: "Premium",
+    type: "Private",
+    tagline: "Instrumen & kreasi tingkat lanjut",
+    desc: "Kelas privat eksklusif untuk instrumen dan program yang membutuhkan pendekatan lebih mendalam dan personal.",
+    instruments: [
+      "Vocal",
+      "Piano",
+      "Saxophone",
+      "Music Production",
+      "Songwriting",
+    ],
+    isPrivate: true,
     featured: true,
-    color: "#5B1B1B",
   },
   {
-    id: "keyboard",
-    label: "06",
-    name: "Keyboard",
-    tagline: "Fleksibel, modern, ekspresif",
-    desc: "Chord pattern, rhythm programming, MIDI dasar, dan bermain dalam konteks band pop dan worship.",
-    price: "Mulai Rp 350.000",
-    period: "/ bulan",
-    features: ["4× sesi/bulan", "MIDI dasar", "Pop & worship"],
-    color: "#3D1010",
+    id: "buddy-jam",
+    index: "03",
+    name: "Buddy Jam",
+    type: "Semi Private · 2–3 orang",
+    tagline: "Belajar seru bersama teman",
+    desc: "Format semi-privat untuk dua hingga tiga orang. Hemat biaya, tetap fokus, dan lebih dinamis.",
+    instruments: ["Acoustic Guitar", "Electric Guitar", "Bass"],
+    isPrivate: false,
+    featured: false,
   },
   {
-    id: "produksi-musik",
-    label: "07",
-    name: "Produksi Musik",
-    tagline: "Ciptakan duniamu sendiri",
-    desc: "DAW (FL Studio / Ableton), sound design, mixing, mastering, dan workflow produser profesional.",
-    price: "Mulai Rp 500.000",
-    period: "/ bulan",
-    features: ["4× sesi/bulan", "DAW pilihan", "Project nyata"],
-    color: "#5B1B1B",
+    id: "complete-musician",
+    index: "04",
+    name: "Complete Musician",
+    type: "Private",
+    tagline: "Lengkap vokal dan instrumen",
+    desc: "Paket kombinasi untuk yang ingin menguasai vokal sekaligus instrumen dalam satu program terpadu.",
+    instruments: ["Vocal + Acoustic Guitar", "Vocal + Piano"],
+    isPrivate: true,
+    featured: false,
+  },
+  {
+    id: "ensemble",
+    index: "05",
+    name: "Ensemble",
+    type: "Semi Private · 3+ orang",
+    tagline: "Bermusik bersama, tumbuh bersama",
+    desc: "Kelas kelompok untuk band atau vokal grup. Belajar dinamika bermain bersama dalam format ensemble.",
+    instruments: ["Band", "Vocal Group"],
+    isPrivate: false,
+    featured: false,
+  },
+  {
+    id: "pro-ensemble",
+    index: "06",
+    name: "Pro Ensemble",
+    type: "Semi Private · 3+ orang",
+    tagline: "Ensemble + kreasi profesional",
+    desc: "Tingkat lanjut dari Ensemble — dipadukan dengan songwriting atau produksi musik untuk output yang siap rilis.",
+    instruments: ["Band + Songwriting", "Band + Music Production"],
+    isPrivate: false,
+    featured: false,
+  },
+  {
+    id: "artist",
+    index: "07",
+    name: "Artist",
+    type: "Private",
+    tagline: "Untuk jiwa yang ingin berkarya",
+    desc: "Paket paling komprehensif. Menggabungkan songwriting atau produksi musik dengan instrumen pilihan Anda.",
+    instruments: ["Songwriting + Instrument", "Instrument + Music Production"],
+    isPrivate: true,
+    featured: false,
   },
 ];
 
@@ -94,45 +105,43 @@ export default function CoursePricing() {
     <section ref={ref} className="py-24 md:py-32 bg-ivory-dark relative">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
-        <div className="mb-14 md:mb-18">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row sm:items-end justify-between gap-6"
-          >
-            <div>
-              <span className="eyebrow text-maroon block mb-4">
-                Program Kursus
-              </span>
-              <h2
-                className="font-serif font-bold text-obsidian"
-                style={{
-                  fontSize: "clamp(2rem, 4vw, 3.25rem)",
-                  lineHeight: "1.05",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                Temukan Instrumen
-                <br />
-                <span className="italic">yang Bicara untuk Anda.</span>
-              </h2>
-            </div>
-            <Link
-              href="/pricing"
-              className="group flex items-center gap-2 text-maroon eyebrow text-[0.68rem] border-b border-maroon pb-0.5 self-end hover:gap-4 transition-all"
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14"
+        >
+          <div>
+            <span className="eyebrow text-maroon block mb-4">
+              Program Kursus
+            </span>
+            <h2
+              className="font-serif font-bold text-obsidian"
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3.25rem)",
+                lineHeight: "1.05",
+                letterSpacing: "-0.02em",
+              }}
             >
-              Lihat detail lengkap
-              <ArrowRight size={13} strokeWidth={1.5} />
-            </Link>
-          </motion.div>
-        </div>
+              Temukan Paket
+              <br />
+              <span className="italic">yang Tepat untuk Anda.</span>
+            </h2>
+          </div>
+          <Link
+            href="/pricing"
+            className="group flex items-center gap-2 text-maroon eyebrow text-[0.68rem] border-b border-maroon pb-0.5 self-end hover:gap-4 transition-all"
+          >
+            Lihat detail & harga lengkap
+            <ArrowRight size={13} strokeWidth={1.5} />
+          </Link>
+        </motion.div>
 
-        {/* Cards grid */}
+        {/* Package Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-0 border border-border-soft">
-          {COURSES.map((course, i) => (
+          {PACKAGES.map((pkg, i) => (
             <motion.article
-              key={course.id}
+              key={pkg.id}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{
@@ -140,90 +149,116 @@ export default function CoursePricing() {
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className={`relative group p-7 border-r border-b border-border-soft flex flex-col gap-4 hover:bg-obsidian transition-colors duration-500 ${
-                course.featured ? "bg-maroon" : "bg-ivory"
+              className={`group relative flex flex-col p-7 border-r border-b border-border-soft hover:bg-obsidian transition-colors duration-500 ${
+                pkg.featured ? "bg-maroon" : "bg-ivory"
               }`}
             >
-              {/* Number */}
-              <span
-                className={`eyebrow text-[0.6rem] ${course.featured ? "text-white/50" : "text-warm-gray"} group-hover:text-white/30 transition-colors`}
-              >
-                {course.label}
-              </span>
-
-              {/* Name */}
-              <div>
-                <h3
-                  className={`font-serif text-xl font-semibold leading-tight mb-1 ${
-                    course.featured ? "text-ivory" : "text-obsidian"
-                  } group-hover:text-ivory transition-colors`}
+              {/* Top row: index + session type badge */}
+              <div className="flex items-center justify-between mb-5">
+                <span
+                  className={`eyebrow text-[0.58rem] transition-colors ${
+                    pkg.featured ? "text-white/40" : "text-warm-gray"
+                  } group-hover:text-white/25`}
                 >
-                  {course.name}
+                  {pkg.index}
+                </span>
+                <span
+                  className={`flex items-center gap-1 eyebrow text-[0.55rem] px-2 py-1 border transition-colors ${
+                    pkg.isPrivate
+                      ? pkg.featured
+                        ? "border-white/20 text-white/50 group-hover:border-white/10 group-hover:text-white/30"
+                        : "border-maroon/25 text-maroon/70 group-hover:border-white/20 group-hover:text-white/40"
+                      : pkg.featured
+                        ? "border-white/20 text-white/50 group-hover:border-white/10 group-hover:text-white/30"
+                        : "border-obsidian/15 text-obsidian-muted group-hover:border-white/20 group-hover:text-white/40"
+                  }`}
+                >
+                  {pkg.isPrivate ? (
+                    <>
+                      <User size={9} strokeWidth={1.5} />
+                      Private
+                    </>
+                  ) : (
+                    <>
+                      <Users size={9} strokeWidth={1.5} />
+                      Semi Private
+                    </>
+                  )}
+                </span>
+              </div>
+
+              {/* Package name */}
+              <div className="mb-4">
+                <h3
+                  className={`font-serif text-xl font-semibold leading-tight mb-1 transition-colors ${
+                    pkg.featured ? "text-ivory" : "text-obsidian"
+                  } group-hover:text-ivory`}
+                >
+                  {pkg.name}
                 </h3>
                 <p
-                  className={`text-xs italic ${course.featured ? "text-white/60" : "text-obsidian-muted"} group-hover:text-white/50 transition-colors`}
+                  className={`text-xs italic transition-colors ${
+                    pkg.featured ? "text-white/55" : "text-obsidian-muted"
+                  } group-hover:text-white/45`}
                 >
-                  {course.tagline}
+                  {pkg.tagline}
                 </p>
               </div>
 
               {/* Divider */}
               <div
-                className={`h-px ${course.featured ? "bg-white/20" : "bg-border-soft"} group-hover:bg-white/10 transition-colors`}
+                className={`h-px mb-4 transition-colors ${
+                  pkg.featured ? "bg-white/15" : "bg-border-soft"
+                } group-hover:bg-white/8`}
               />
 
               {/* Description */}
               <p
-                className={`text-xs leading-relaxed flex-1 ${
-                  course.featured ? "text-white/70" : "text-obsidian-muted"
-                } group-hover:text-white/60 transition-colors`}
+                className={`text-xs leading-relaxed mb-5 flex-1 transition-colors ${
+                  pkg.featured ? "text-white/65" : "text-obsidian-muted"
+                } group-hover:text-white/55`}
               >
-                {course.desc}
+                {pkg.desc}
               </p>
 
-              {/* Features */}
-              <ul className="space-y-1">
-                {course.features.map((f) => (
+              {/* Instruments list */}
+              <ul className="space-y-1.5 mb-5">
+                {pkg.instruments.map((inst) => (
                   <li
-                    key={f}
-                    className={`flex items-center gap-2 text-[0.7rem] ${
-                      course.featured ? "text-white/60" : "text-obsidian-muted"
-                    } group-hover:text-white/40 transition-colors`}
+                    key={inst}
+                    className={`flex items-center gap-2 text-[0.72rem] transition-colors ${
+                      pkg.featured ? "text-white/70" : "text-obsidian"
+                    } group-hover:text-white/60`}
                   >
-                    <span className="w-1 h-1 rounded-full bg-maroon-accent group-hover:bg-white/40 transition-colors" />
-                    {f}
+                    <span
+                      className={`w-1 h-1 rounded-full flex-shrink-0 transition-colors ${
+                        pkg.featured ? "bg-maroon-accent" : "bg-maroon"
+                      } group-hover:bg-white/40`}
+                    />
+                    {inst}
                   </li>
                 ))}
               </ul>
 
-              {/* Price */}
-              <div className="flex items-baseline gap-1 mt-auto pt-4">
-                <span
-                  className={`font-serif font-semibold text-base ${
-                    course.featured ? "text-ivory" : "text-obsidian"
-                  } group-hover:text-ivory transition-colors`}
-                >
-                  {course.price}
-                </span>
-                <span
-                  className={`text-xs ${
-                    course.featured ? "text-white/50" : "text-obsidian-muted"
-                  } group-hover:text-white/40 transition-colors`}
-                >
-                  {course.period}
-                </span>
-              </div>
+              {/* Session type label */}
+              <p
+                className={`text-[0.63rem] italic mb-5 transition-colors ${
+                  pkg.featured ? "text-white/30" : "text-warm-gray"
+                } group-hover:text-white/22`}
+              >
+                {pkg.type}
+              </p>
 
               {/* CTA */}
               <Link
                 href="/pricing"
                 className={`block text-center eyebrow text-[0.62rem] py-2.5 border transition-all ${
-                  course.featured
+                  pkg.featured
                     ? "border-white/30 text-ivory hover:bg-white/10"
                     : "border-maroon/40 text-maroon group-hover:border-white/30 group-hover:text-ivory"
                 }`}
               >
-                Daftar Kursus
+                Lihat Detail
               </Link>
             </motion.article>
           ))}
@@ -236,10 +271,10 @@ export default function CoursePricing() {
           transition={{ delay: 0.6, duration: 0.7 }}
           className="text-center text-obsidian-muted text-xs mt-8"
         >
-          Harga dapat bervariasi berdasarkan lokasi dan paket. Konsultasi gratis
-          untuk sesi pertama.
-          <Link href="/pricing" className="text-maroon ml-1 hover:underline">
-            Lihat detail →
+          Harga disesuaikan berdasarkan paket dan lokasi. Konsultasi gratis
+          sebelum mendaftar.{" "}
+          <Link href="/pricing" className="text-maroon hover:underline">
+            Lihat semua paket & harga →
           </Link>
         </motion.p>
       </div>
